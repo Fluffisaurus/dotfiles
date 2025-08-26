@@ -1,0 +1,25 @@
+[user]
+    email = angushon96@gmail.com
+    name = Fluffisaurus
+[init]
+    defaultBranch = main
+[commit]
+	template = ~/.git-commit-message-template
+	gpgSign = false
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+[pull]
+	rebase = true
