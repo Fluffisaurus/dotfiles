@@ -1,8 +1,10 @@
 # <type>(<scope>)!: <description> (72 characters maximum)
 # |<--- preferably using up to 50 characters --->|<------------------->|
 
+
 # Optional <body>
 # |<------------- try limiting to 72 characters per line ------------->|
+
 
 # Optional <footer>
 
