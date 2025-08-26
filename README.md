@@ -6,8 +6,7 @@
 Run these commands after cloning repo
 
 ```
-cp ~/dotfiles/git/.gitconfig ~/
-cp ~/dotfiles/git/.git-commit-message-template ~/
+cp -r ~/dotfiles/git/* ~/
 ```
 
 ## setup term dropdown
