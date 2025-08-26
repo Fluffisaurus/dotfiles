@@ -1,0 +1,41 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ["~"]
+
+- create:
+    - ~/projects
+    - ~/scripts
+
+- shell:
+    -
+      command: sudo dnf install fish
+      description: Install fish
+    -
+      command: chsh -s $(which fish)
+      description: Set fish as default shell
+    -
+      command: sudo dnf install fzf
+      description: Install fzf.fish dependency fzf
+    -
+      command: fzf --fish | source
+      description: Activate keybindings for fzf in fish
+    -
+      command: sudo dnf install fd-find
+      description: Install fzf.fish dependency fd
+    -
+      command: sudo dnf install bat
+      description: Install fzf.fish dependency bat
+
+- link:
+    ~/scripts:
+    ~/.config:
+      glob: true
+      path: config/**
+    ~/:
+      glob: true
+      path: git/*
+      prefix: '.'
