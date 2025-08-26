@@ -1,7 +1,3 @@
-[submodule "zenbook-duo-fedora-kde"]
-	path = zenbook-duo-fedora-kde
-	url = git@github.com:Fluffisaurus/zenbook-duo-fedora-kde.git
-	branch = main
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
