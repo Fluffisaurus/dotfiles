@@ -4,8 +4,8 @@
 # DESC:   turn any terminal into a dropdown terminal
 # DEMO:   https://www.youtube.com/watch?v=mVw2gD9iiOg
 # DEPEND: kdotool (https://github.com/jinliu/kdotool)
-# CLOG:   2025-08-27   add num_displays check to scale term to fit on 1st display, by @Fluffisaurus
-#         2025-08-25   rewrite for kde plasma wayland by @Fluffisaurus
+# CLOG:   2025-08-27   @Fluffisaurus - add num_displays check to scale term to fit on 1st display
+#         2025-08-25   @Fluffisaurus - rewrite for kde plasma wayland
 #         2022-03-05   else statement to allow terminal to jump to current virtual desktop if is visible on another desktop
 #         2022-02-28   added auto launch terminal if none running by https://github.com/aaccioly
 #         2021-02-10   use comm to match window name and class, this avoids terminal windows with different names
