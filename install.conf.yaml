@@ -6,6 +6,14 @@
 
 - clean: ["~"]
 
+- clean:
+    ~/.config:
+      recursive: true
+      force: true
+    ~/etc:
+      recursive: true
+      force: true
+
 - create:
     - ~/projects
     - ~/scripts
