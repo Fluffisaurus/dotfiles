@@ -20,11 +20,15 @@
 
 - shell:
     -
-      command: chmod +x ./scripts/install_dependencies.sh
+      command: chmod +x ./scripts/install_dependencies.sh ./scripts/install_asus_specific_dependencies.sh
       description: Give install script executable permissions
     -
       command: ./scripts/install_dependencies.sh
       description: Run install script for install_dependencies
+      stdout: true
+    -
+      command: ./scripts/install_asus_specific_dependencies.sh
+      description: Run install script for ASUS laptops only
       stdout: true
 
 - link:
