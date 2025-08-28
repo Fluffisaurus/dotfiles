@@ -58,8 +58,10 @@ if [ $(hostnamectl icon-name) = "computer-laptop" ] && [[ $(hostnamectl | grep "
 
     echo "Setting battery charge limit threshold to 80..."
     sudo bat threshold 80
+    echo "Running suggested command to persist changes..."
     sudo bat persist
-    echo -e "bat setup complete.\n\n"
+    
+    echo -e "\nSucessfully completed bat setup.\n\n"
 fi
 
 
