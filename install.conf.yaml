@@ -36,6 +36,9 @@
     ~/.config:
       glob: true
       path: config/**
+    ~/.aws:
+      glob: true
+      path: aws/*
     ~/:
       glob: true
       path: git/*
