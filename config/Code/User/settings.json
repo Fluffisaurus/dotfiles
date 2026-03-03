@@ -19,6 +19,9 @@
     "[yaml]": {
         "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter"
     },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
     "search.defaultViewMode": "tree",
     "search.mode": "newEditor",
     "files.associations": {
