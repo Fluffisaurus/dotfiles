@@ -33,6 +33,10 @@ end
 # pipenv creates .venv inside each project, https://pipenv.pypa.io/en/latest/#basic-usage
 set -x PIPENV_VENV_IN_PROJECT true
 
+# starship setup
+set -gx STARSHIP_CONFIG ~/.config/starship/custom-catppuccin-powerline.toml
+starship init fish | source
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
