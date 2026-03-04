@@ -30,8 +30,8 @@ effective_height=$(expr $height / $scale)
 # my_term="alacritty"
 # my_term=terminator
 # my_term=gnome-terminal
-my_term="konsole"
-# my_term="kitty"
+# my_term="konsole"
+my_term="kitty"
 
 # option 2: auto detect terminal emulator (note: make sure to only open one)
 # my_term="urxvt|kitty|xterm|uxterm|termite|sakura|lxterminal|terminator|mate-terminal|pantheon-terminal|konsole|gnome-terminal|xfce4-terminal"
