@@ -1,0 +1,10 @@
+bmalehorn.vscode-fish
+dbaeumer.vscode-eslint
+eamodio.gitlens
+esbenp.prettier-vscode
+github.copilot-chat
+hashicorp.terraform
+kennylong.kubernetes-yaml-formatter
+monokai.theme-monokai-pro-vscode
+mquandalle.graphql
+tamasfe.even-better-toml

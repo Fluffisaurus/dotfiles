@@ -36,5 +36,7 @@
         "scminput": false
     },
     "editor.wordWrap": "on",
-    "editor.wrappingIndent": "deepIndent"
+    "editor.wrappingIndent": "deepIndent",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1"
 }
