@@ -24,8 +24,8 @@ $conda\
 [ ](fg:sapphire)\
 $git_branch$git_commit$git_state$git_status\
 $git_metrics\
-$fill\
-$cmd_duration $time$battery\
+$fill \
+$cmd_duration$time$battery\
 $line_break\
 $character\
 """
