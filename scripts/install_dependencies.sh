@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-deps=("fish" "fzf" "fd" "bat")
+deps=("fish" "fzf" "fd" "bat" "kitty" "starship")
 echo -e "----------\nDEPENDENCIES"
 echo "Dependencies to install: [${deps[*]}]"
+
+echo "Enable starship COPR repo"
+sudo dnf copr enable atim/starship -y
 
 for dep in ${deps[@]}; do
     if ! command -v "$dep" &> /dev/null; then
         echo "  Installing dependency $dep..."
-        sudo dnf install $dep
+        sudo dnf install -y $dep
         echo "  Successfully installed $dep."
     else
         echo "  $dep is already installed, skipping."
