@@ -20,7 +20,7 @@ REPO="bat"
 ASSET_NAME_PATTERN="bat"  # desired asset file, e.g., ".*linux-amd64.tar.gz"
 
 # install bat if asus laptop
-if [ $(hostnamectl chassis) = "laptop" ] && [[ $(hostnamectl | grep "Vendor" | sed "s/.*Vendor: //") =~ "ASUS" ]]; then
+if [[ $(hostnamectl chassis) = "laptop" || $(hostnamectl chassis) = "convertible" && $(hostnamectl | grep "Vendor" | sed "s/.*Vendor: //") =~ "ASUS" ]]; then
     echo -e "----------\nASUS LAPTOP SETUP"
     echo -e "ASUS laptop detected, installing dependency bat.\n"
 
