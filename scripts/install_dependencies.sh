@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-deps=("fish" "fzf" "fd" "bat" "kitty" "starship")
+deps=("fish" "fzf" "fd" "bat" "kdotool" "kitty" "starship")
 echo -e "----------\nDEPENDENCIES"
 echo "Dependencies to install: [${deps[*]}]"
 
