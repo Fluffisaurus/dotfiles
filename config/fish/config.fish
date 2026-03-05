@@ -34,10 +34,18 @@ end
 set -x PIPENV_VENV_IN_PROJECT true
 
 # starship setup
-set -gx STARSHIP_CONFIG ~/.config/starship/custom-catppuccin-powerline.toml
+set -gx STARSHIP_CONFIG ~/.config/starship/fluffisaurus-starship.toml
+function starship_transient_prompt_func
+    starship module character
+end
+function starship_transient_rprompt_func
+    starship module time
+    starship module battery
+    starship module newline
+end
 starship init fish | source
+enable_transience
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-

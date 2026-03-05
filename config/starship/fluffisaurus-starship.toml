@@ -1,15 +1,13 @@
+# @fluffisaurus starship config, uses JetBrainsMono nerd font
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
 [](red)\
 $os\
-$username\
-[](bg:peach fg:red)\
+[](fg:red bg:peach)\
 $directory\
-[](bg:yellow fg:peach)\
-$git_branch\
-$git_status\
-[](fg:yellow bg:green)\
+[](fg:peach bg:green)\
 $c\
 $rust\
 $golang\
@@ -20,11 +18,14 @@ $kotlin\
 $haskell\
 $python\
 [](fg:green bg:sapphire)\
+$docker_context\
+$terraform\
 $conda\
-[](fg:sapphire bg:lavender)\
-$time\
-[ ](fg:lavender)\
-$cmd_duration\
+[ ](fg:sapphire)\
+$git_branch$git_commit$git_state$git_status\
+$git_metrics\
+$fill\
+$cmd_duration $time$battery\
 $line_break\
 $character\
 """
@@ -32,6 +33,9 @@ $character\
 palette = 'catppuccin_frappe'
 
 add_newline = true
+
+[fill]
+symbol = ""
 
 [os]
 disabled = false
@@ -67,7 +71,7 @@ format = '[ $user]($style)'
 
 [directory]
 style = "bg:peach fg:crust"
-format = "[ $path ]($style)"
+format = "[   $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -77,15 +81,29 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+"Desktop" = " "
 
 [git_branch]
 symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+style = "bg:blue"
+format = '[[](blue)[ $symbol $branch ](fg:crust bg:blue)]($style)'
+
+[git_commit]
+disabled = false
+style = "bg:blue"
+format = '[\($hash$tag\)]($style) '
+
+[git_state]
+disabled = false
+style = "bg:blue"
+format = '\[[$state ($progress_current/$progress_total)]($style)\]'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+style = "bg:blue"
+format = '[[($all_status$ahead_behind )](fg:crust bg:blue)[ ](fg:blue)]($style)'
+
+[git_metrics]
+disabled = false
 
 [nodejs]
 symbol = ""
@@ -94,6 +112,11 @@ format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
 [c]
 symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[cpp]
+symbol = " "
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
@@ -143,11 +166,10 @@ style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
 
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:lavender"
-format = '[[  $time ](fg:crust bg:lavender)]($style)'
+[terraform]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
 [character]
 disabled = false
@@ -165,6 +187,51 @@ style = "bg:lavender"
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
+
+[time]
+disabled = false
+time_format = "%F %T"
+style = "bg:lavender"
+format = '[[](fg:lavender)[$time  ](fg:crust bg:lavender)[](fg:lavender bg:mauve)]($style)'
+
+[battery]
+full_symbol = "󰁹"
+charging_symbol = "󰂄"
+discharging_symbol = "󰁽"
+unknown_symbol = "󰂃"
+empty_symbol = "󰂎"
+format = "[ $symbol $percentage[](fg:mauve)]($style)"
+
+[[battery.display]]
+threshold = 100
+charging_symbol = "󰁹"
+discharging_symbol = "󰁹"
+style = "bg:mauve fg:crust"
+
+[[battery.display]]
+threshold = 75
+charging_symbol = "󰂁"
+discharging_symbol = "󰂁"
+style = "bg:mauve fg:crust"
+
+[[battery.display]]
+threshold = 50
+charging_symbol = "󰁾"
+discharging_symbol = "󰁾"
+style = "bg:mauve fg:crust"
+
+[[battery.display]]
+threshold = 25
+charging_symbol = "󰁼"
+discharging_symbol = "󰁼"
+style = "bg:mauve fg:crust"
+
+[[battery.display]]
+threshold = 10
+charging_symbol = "󱊡"
+discharging_symbol = "󱊡"
+style = "bg:mauve fg:crust"
+
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
