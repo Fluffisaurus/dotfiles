@@ -1,0 +1,6 @@
+# start fish if it's not already started and interactive
+if [[ -z "$FISH_VERSION" && -z "$TMUX" ]]; then
+  if command -v > /dev/null; then
+    exec fish
+  fi
+fi

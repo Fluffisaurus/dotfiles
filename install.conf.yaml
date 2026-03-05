@@ -43,3 +43,7 @@
       glob: true
       path: git/*
       prefix: "."
+    ~/:
+      glob: true
+      path: home/*
+      prefix: "."
