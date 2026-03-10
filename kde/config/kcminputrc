@@ -1,0 +1,8 @@
+[Libinput][2821][7154][Primax Electronics Ltd. ASUS Zenbook Duo Keyboard]
+NaturalScroll=false
+
+[Libinput][2821][7154][Primax Electronics Ltd. ASUS Zenbook Duo Keyboard Mouse]
+NaturalScroll=false
+
+[Libinput][2821][7154][Primax Electronics Ltd. ASUS Zenbook Duo Keyboard Touchpad]
+NaturalScroll=true

@@ -36,6 +36,12 @@
     ~/.config:
       glob: true
       path: config/**
+    ~/.config:
+      glob: true
+      path: kde/config/**
+    ~/.local/share:
+      glob: true
+      path: kde/local/**
     /etc:
       glob: true
       path: etc/**
