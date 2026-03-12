@@ -1,1 +1,1 @@
-cat vscode-extensions.txt | xargs -L 1 code --install-extension
+cat config/Code/vscode-extensions.txt | xargs -L 1 code --install-extension
