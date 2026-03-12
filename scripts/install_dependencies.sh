@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-deps=("fish" "fzf" "fd" "bat" "kdotool" "kitty" "starship")
+deps=("fish" "fzf" "fd" "bat" "kdotool" "kitty" "starship" "eza")
 echo -e "----------\nDEPENDENCIES"
 echo "Dependencies to install: [${deps[*]}]"
 
-echo "Enable starship COPR repo"
+echo "Enable starship fedora community project repo"
 sudo dnf copr enable atim/starship -y
+echo "Enable eza fedora community project repo"
+sudo dnf copr enable alternateved/eza -y
 
 for dep in ${deps[@]}; do
     if ! command -v "$dep" &> /dev/null; then
