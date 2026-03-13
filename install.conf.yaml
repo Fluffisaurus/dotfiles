@@ -81,3 +81,4 @@
     ~/.local/share/icons:
       glob: true
       path: kde/icons/**
+      exclude: [ "kde/icons/README.md" ]
