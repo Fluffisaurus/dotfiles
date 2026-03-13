@@ -145,6 +145,42 @@ DialogWidth=810
 favoritesPortedToKAstats=true
 systemIconSize=2
 
+[Containments][30][Applets][122]
+immutability=1
+plugin=org.kde.plasma.digitalclock
+
+[Containments][30][Applets][122][Configuration]
+popupHeight=451
+popupWidth=560
+
+[Containments][30][Applets][122][Configuration][Appearance]
+dateDisplayFormat=BelowTime
+dateFormat=isoDate
+displayTimezoneFormat=UTCOffset
+fontFamily=Noto Sans
+fontWeight=400
+showDate=false
+showLocalTimezone=true
+showSeconds=Always
+showWeekNumbers=true
+use24hFormat=2
+
+[Containments][30][Applets][122][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][30][Applets][123]
+immutability=1
+plugin=org.kde.plasma.marginsseparator
+
+[Containments][30][Applets][123][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][30][Applets][124]
+immutability=1
+plugin=org.kde.plasma.marginsseparator
+
 [Containments][30][Applets][63]
 immutability=1
 plugin=org.kde.plasma.shutdownorswitch
@@ -290,7 +326,16 @@ screenWidth=1440
 singleClickAction=kwin,Show Desktop
 
 [Containments][30][General]
-AppletOrder=117;95;109;110;113;76;63
+AppletOrder=117;95;109;110;113;76;124;122;123;63
+
+[Containments1Appletsts][121][Configuration][Appearance]
+layoutKey=system-time-long
+
+[Containments30Appletsts][120][Configuration][Appearance]
+dateDisplayFormat=BelowTime
+fontFamily=Noto Sans
+fontWeight=400
+use24hFormat=2
 
 [ScreenMapping]
 itemsOnDisabledScreens=
