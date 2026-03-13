@@ -271,3 +271,7 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][net.local.any_term_dropdown.sh.desktop]
 _launch=Meta+Space
+
+[services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=
+OpenWithoutScreenshot=
