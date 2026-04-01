@@ -8,6 +8,7 @@ RightButton;NoModifier=org.kde.contextmenu
 [Containments][1]
 ItemGeometries-1440x900=
 ItemGeometries-1800x1125=
+ItemGeometries-2560x1440=
 ItemGeometriesHorizontal=
 activityId=260475bd-6b12-42f0-b7ef-9546cae92e5d
 formfactor=0
@@ -129,22 +130,6 @@ DialogWidth=810
 displayedText=Number
 showOnlyCurrentScreen=true
 
-[Containments][30][Applets][117]
-immutability=1
-plugin=adhe.launchpadPlasma
-
-[Containments][30][Applets][117][Configuration]
-popupHeight=438
-popupWidth=312
-
-[Containments][30][Applets][117][Configuration][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
-
-[Containments][30][Applets][117][Configuration][General]
-favoritesPortedToKAstats=true
-systemIconSize=2
-
 [Containments][30][Applets][122]
 immutability=1
 plugin=org.kde.plasma.digitalclock
@@ -181,23 +166,47 @@ DialogWidth=810
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][30][Applets][63]
+[Containments][30][Applets][126]
 immutability=1
-plugin=org.kde.plasma.shutdownorswitch
+plugin=luisbocanegra.panelspacer.extended
 
-[Containments][30][Applets][63][Configuration]
-popupHeight=216
-popupWidth=216
-
-[Containments][30][Applets][63][Configuration][ConfigDialog]
+[Containments][30][Applets][126][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
 
-[Containments][30][Applets][63][Configuration][General]
+[Containments][30][Applets][126][Configuration][General]
+middleClickAction=kwin,Overview
+mouseDragLeftAction=kwin,Window One Desktop to the Right
+mouseDragRightAction=kwin,Window One Desktop to the Left
+screenWidth=1440
+singleClickAction=kwin,Show Desktop
+
+[Containments][30][Applets][128]
+immutability=1
+plugin=org.kde.plasma.shutdownorswitch
+
+[Containments][30][Applets][128][Configuration]
+popupHeight=137
+popupWidth=216
+
+[Containments][30][Applets][128][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][30][Applets][128][Configuration][General]
+showHibernate=true
 showIcon=false
+showLockScreen=false
+showLogOut=false
 showName=true
 showSuspendThenHibernate=true
-showUsers=true
+
+[Containments][30][Applets][129]
+immutability=1
+plugin=adhe.launchpadPlasma
+
+[Containments][30][Applets][129][Configuration][General]
+favoritesPortedToKAstats=true
 
 [Containments][30][Applets][76]
 activityId=
@@ -306,27 +315,8 @@ knownItems=org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.battery,org.kd
 scaleIconsToFit=true
 shownItems=org.kde.plasma.volume,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.weather
 
-[Containments][30][Applets][95]
-immutability=1
-plugin=luisbocanegra.panelspacer.extended
-
-[Containments][30][Applets][95][Configuration][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
-
-[Containments][30][Applets][95][Configuration][General]
-middleClickAction=kwin,ExposeAll
-mouseDragLeftAction=kwin,Window One Desktop to the Right
-mouseDragRightAction=kwin,Window One Desktop to the Left
-mouseWheelDownAction=Disabled,Disabled
-mouseWheelUpAction=Disabled,Disabled
-notificationType=2
-pressHoldAction=kwin,Overview
-screenWidth=1440
-singleClickAction=kwin,Show Desktop
-
 [Containments][30][General]
-AppletOrder=117;95;109;110;113;76;124;122;123;63
+AppletOrder=129;126;109;110;113;76;124;122;123;128
 
 [Containments1Appletsts][121][Configuration][Appearance]
 layoutKey=system-time-long
@@ -339,3 +329,4 @@ use24hFormat=2
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=
