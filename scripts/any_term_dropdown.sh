@@ -67,7 +67,9 @@ else
         did=$(kdotool get_desktop)
         kdotool set_desktop_for_window $pid $did
         kdotool windowactivate $pid
-        kdotool windowmove $pid 0 0
-        kdotool windowsize $pid $effective_width $effective_height
+        if [[ "$my_term" != "kitty" ]]; then
+            kdotool windowmove $pid 0 0
+            kdotool windowsize $pid $effective_width $effective_height
+        fi
     fi
 fi
