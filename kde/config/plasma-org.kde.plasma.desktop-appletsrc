@@ -53,7 +53,7 @@ DialogWidth=810
 [Containments][3][Applets][29][Configuration][General]
 fill=false
 highlightWindows=true
-launchers=applications:systemsettings.desktop,preferred://browser,applications:kitty.desktop
+launchers=applications:systemsettings.desktop,applications:org.mozilla.firefox.desktop,applications:chromium-browser.desktop,applications:kitty.desktop
 showOnlyCurrentDesktop=false
 
 [Containments][3][General]
