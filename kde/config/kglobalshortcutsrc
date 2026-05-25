@@ -251,6 +251,7 @@ activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 105=,none,Activate System Monitor Widget
 activate widget 117=,none,Activate Launchpad Plasma Widget
+activate widget 131=,none,Activate Launchpad Plasma Widget
 activate widget 29=,none,Activate Icons-Only Task Manager Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
@@ -271,7 +272,3 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][net.local.any_term_dropdown.sh.desktop]
 _launch=Meta+Space
-
-[services][org.kde.spectacle.desktop]
-CurrentMonitorScreenShot=
-OpenWithoutScreenshot=

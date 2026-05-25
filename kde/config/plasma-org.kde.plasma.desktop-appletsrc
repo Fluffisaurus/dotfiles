@@ -53,7 +53,7 @@ DialogWidth=810
 [Containments][3][Applets][29][Configuration][General]
 fill=false
 highlightWindows=true
-launchers=applications:systemsettings.desktop,applications:org.mozilla.firefox.desktop,applications:chromium-browser.desktop,applications:kitty.desktop
+launchers=applications:systemsettings.desktop,applications:org.mozilla.firefox.desktop,applications:kitty.desktop
 showOnlyCurrentDesktop=false
 
 [Containments][3][General]
@@ -201,11 +201,15 @@ showLogOut=false
 showName=true
 showSuspendThenHibernate=true
 
-[Containments][30][Applets][129]
+[Containments][30][Applets][131]
 immutability=1
 plugin=adhe.launchpadPlasma
 
-[Containments][30][Applets][129][Configuration][General]
+[Containments][30][Applets][131][Configuration]
+popupHeight=510
+popupWidth=647
+
+[Containments][30][Applets][131][Configuration][General]
 favoritesPortedToKAstats=true
 
 [Containments][30][Applets][76]
@@ -316,7 +320,7 @@ scaleIconsToFit=true
 shownItems=org.kde.plasma.volume,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.weather
 
 [Containments][30][General]
-AppletOrder=129;126;109;110;113;76;124;122;123;128
+AppletOrder=131;126;109;110;113;76;124;122;123;128
 
 [Containments1Appletsts][121][Configuration][Appearance]
 layoutKey=system-time-long

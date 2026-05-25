@@ -133,6 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
+BrowserApplication=chromium-browser.desktop
 ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
 
 [Icons]
