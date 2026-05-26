@@ -1,0 +1,18 @@
+- clean: [ "~" ]
+
+- clean:
+    ~/.local/share/icons:
+      recursive: true
+      force: true
+
+- defaults:
+    link:
+      create: true
+      relink: false
+      force: true
+
+- link:
+    ~/.local/share/icons:
+      glob: true
+      path: kde/icons/**
+      exclude: [ "kde/icons/README.md" ]

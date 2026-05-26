@@ -7,9 +7,6 @@
     ~/etc:
       recursive: true
       force: true
-    ~/.local/share/icons:
-      recursive: true
-      force: true
 
 - create:
   - ~/projects
@@ -66,78 +63,3 @@
     ~/.config/autostart/superpaper.desktop:
       path: superpaper/superpaper.desktop
 
-
-# Fedora KDE specific files
-- defaults:
-    link:
-      create: true
-      relink: true
-      force: true
-
-- link:
-    ~/.config:
-      glob: true
-      path: kde/config/**
-    /etc:
-      glob: true
-      path: kde/etc/**
-
-- defaults:
-    link:
-      create: true
-      relink: false
-      force: false
-
-- link:
-    ~/.local/share:
-      glob: true
-      path: kde/local/**
-    ~/.local/share/icons:
-      glob: true
-      path: kde/icons/**
-      exclude: [ "kde/icons/README.md" ]
-
-- defaults:
-    shell:
-      stdout: true
-      stderr: true
-
-- shell:
-  - description: Make install_backup_dependencies.sh executable
-    command: chmod +x ./scripts/install_backup_dependencies.sh
-
-  - description: Run install_backup_dependencies.sh install script 
-    command: ./scripts/install_backup_dependencies.sh
-
-  # Link Snapper config files to /etc
-  - description: Creating Snapper configuration directories
-    command: sudo mkdir -p /etc/snapper/configs
-
-  - description: Linking active Snapper configurations list for both root and home
-    command: sudo ln -sf "$(pwd)/kde/snapper/snapper-sysconfig" /etc/sysconfig/snapper
-
-  - description: Linking Snapper root configuration
-    command: sudo ln -sf "$(pwd)/kde/snapper/snapper-root-config" /etc/snapper/configs/root
-
-  - description: Linking Snapper home configuration
-    command: sudo ln -sf "$(pwd)/kde/snapper/snapper-home-config" /etc/snapper/configs/home
-
-  - description: Linking snapper-plugin configuration
-    command: sudo ln -sf "$(pwd)/kde/snapper/libdnf5-plugin-snapper.conf" /etc/dnf/libdnf5-plugins/snapper.conf
-
-  # Disable CoW for cache directory in /home
-  - description: Remove existing items in /.cache
-    command: rm -rf ~/.cache/*
-
-  - description: Apply No-Copy-on-Write to /.cache
-    command: chattr +C ~/.cache
-  
-  - description: Verify the attribute contains C
-    command: lsattr -d ~/.cache
-
-  # Permissions
-  - description: Give root permissions to traverse dotfiles
-    command: chmod +x ~/ ~/dotfiles ~/dotfiles/kde/snapper
-
-  - description: Make files readable by snapper daemon
-    command: chmod 644 ~/dotfiles/kde/snapper/*

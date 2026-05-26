@@ -1,0 +1,26 @@
+- clean: [ "~" ]
+
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- link:
+    ~/.config:
+      glob: true
+      path: kde/config/**
+    /etc:
+      glob: true
+      path: kde/etc/**
+
+- defaults:
+    link:
+      create: true
+      relink: false
+      force: false
+
+- link:
+    ~/.local/share:
+      glob: true
+      path: kde/local/**
