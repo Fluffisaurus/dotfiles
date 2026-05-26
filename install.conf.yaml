@@ -52,6 +52,20 @@
       path: home/*
       prefix: "."
 
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: false
+
+# only necessary until this issue is fixed
+# https://github.com/hhannine/superpaper/issues/163
+- link:
+    ~/.local/share/applications/superpaper.desktop:
+      path: superpaper/superpaper.desktop
+    ~/.config/autostart/superpaper.desktop:
+      path: superpaper/superpaper.desktop
+
 
 # Fedora KDE specific files
 - defaults:

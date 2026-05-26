@@ -49,3 +49,10 @@ enable_transience
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# Created by `pipx` on 2026-05-25 23:27:24
+set PATH $PATH /home/fluffisaurus/.local/bin
