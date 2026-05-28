@@ -1,0 +1,87 @@
+[
+  {
+    "config_version": 2,
+    "id": "37148c22-1e36-4ebd-86b7-4389ea57be94",
+    "archive_prefix": "zenbook-duo-fedora-",
+    "repo_id": "7d74c70d9ea6874f628956a10035cb9c6ca3a70dc27a7496a7d367f1699e24d5",
+    "repo": {
+      "type": "Local",
+      "path": "backup-fedora-fluffisaurus",
+      "mount_path": "/run/media/fluffisaurus/SanDisk_Ultra_Flair_64gb",
+      "uri": "file:///run/media/fluffisaurus/SanDisk_Ultra_Flair_64gb/backup-fedora-fluffisaurus",
+      "drive_name": null,
+      "mount_name": "SanDisk_Ultra_Flair_64gb",
+      "volume_uuid": null,
+      "volume_uuid_identifier": null,
+      "removable": false,
+      "icon": ". GThemedIcon drive-harddisk drive drive-harddisk-symbolic drive-symbolic",
+      "icon_symbolic": ". GThemedIcon drive-harddisk-symbolic drive-symbolic drive-harddisk drive",
+      "settings": null
+    },
+    "encrypted": true,
+    "encryption_mode": "repokey",
+    "include": [
+      ".ssh",
+      "Desktop",
+      "Development",
+      "Documents",
+      "Pictures",
+      "Projects",
+      "Videos",
+      "dotfiles"
+    ],
+    "exclude": [
+      {
+        "Fnmatch": "**/.venv"
+      },
+      {
+        "Fnmatch": "**/.virtualenv"
+      },
+      {
+        "Fnmatch": "**/Downloads"
+      },
+      {
+        "Fnmatch": "**/env"
+      },
+      {
+        "Fnmatch": "**/node_modules"
+      },
+      {
+        "Fnmatch": "**/var/lib/containerd"
+      },
+      {
+        "Fnmatch": "**/var/lib/docker"
+      },
+      {
+        "Fnmatch": "**/venv"
+      },
+      "Caches",
+      "Trash",
+      "FlatpakApps",
+      "VmsContainers"
+    ],
+    "schedule": {
+      "enabled": true,
+      "settings": {
+        "run_on_battery": false
+      },
+      "frequency": {
+        "Daily": {
+          "preferred_time": "17:00:00"
+        }
+      }
+    },
+    "prune": {
+      "enabled": true,
+      "keep": {
+        "hourly": 24,
+        "daily": 14,
+        "weekly": 8,
+        "monthly": 2,
+        "yearly": 0
+      }
+    },
+    "title": "",
+    "user_scripts": {}
+  }
+]
