@@ -9,8 +9,9 @@
       force: true
 
 - create:
-  - ~/projects
-  - ~/scripts
+  - ~/Projects
+  - ~/Development
+  - ~/Scripts
 
 - shell:
   - command: chmod +x ./scripts/install_dependencies.sh ./scripts/install_nerd_fonts.sh ./scripts/install_asus_specific_dependencies.sh
@@ -33,7 +34,9 @@
       force: true
 
 - link:
-    ~/scripts:
+    ~/Scripts:
+      glob: true
+      path: scripts/*
     ~/.config:
       glob: true
       path: config/**
