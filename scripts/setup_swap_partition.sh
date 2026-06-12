@@ -40,4 +40,6 @@ if [[ -z "$PARTITION" ]]; then
     sudo semanage fcontext --add --type swapfile_t /var/swap/swapfile
     sudo restorecon -RF /var/swap
   fi
+else
+  echo "Backup partition already exists, nothing to do."
 fi

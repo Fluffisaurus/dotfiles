@@ -8,6 +8,13 @@
       force: true
 
 - shell:
+  # setup swap partition
+  - description: Make setup_swap_partition.sh executable
+    command: chmod +x ./scripts/setup_swap_partition.sh
+
+  - description: Setup swap partitions if it doesn't already exist
+    command: ./scripts/setup_swap_partition.sh
+
   # dependency install
   - description: Make install_backup_dependencies.sh executable
     command: chmod +x ./scripts/install_backup_dependencies.sh
