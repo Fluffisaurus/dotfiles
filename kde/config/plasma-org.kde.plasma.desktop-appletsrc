@@ -18,12 +18,16 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
 
 [Containments][1][Wallpaper][org.kde.image][General]
 FillMode=0
 Image=file:///home/fluffisaurus/.cache/superpaper/temp/me-stack-b-crop-0.png
 SlidePaths=/usr/share/wallpapers/
+
+[Containments][1][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/fluffisaurus/Pictures/my_wallpapers/editted_DSC08825_20260106.jpg
+SlidePaths=/home/fluffisaurus/Pictures/my_wallpapers/
 
 [Containments][2]
 ItemGeometries-1800x1125=
@@ -208,15 +212,19 @@ showLogOut=false
 showName=true
 showSuspendThenHibernate=true
 
-[Containments][30][Applets][131]
+[Containments][30][Applets][134]
 immutability=1
-plugin=adhe.launchpadPlasma
+plugin=org.kde.plasma.kickoff
 
-[Containments][30][Applets][131][Configuration]
-popupHeight=510
+[Containments][30][Applets][134][Configuration]
+popupHeight=509
 popupWidth=647
 
-[Containments][30][Applets][131][Configuration][General]
+[Containments][30][Applets][134][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][30][Applets][134][Configuration][General]
 favoritesPortedToKAstats=true
 
 [Containments][30][Applets][76]
@@ -327,7 +335,7 @@ scaleIconsToFit=true
 shownItems=org.kde.plasma.volume,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.weather
 
 [Containments][30][General]
-AppletOrder=131;126;109;110;113;76;124;122;123;128
+AppletOrder=134;126;109;110;113;76;124;122;123;128
 
 [Containments1Appletsts][121][Configuration][Appearance]
 layoutKey=system-time-long
