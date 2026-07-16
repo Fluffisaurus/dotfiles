@@ -143,6 +143,7 @@ Theme=Papirus-Dark
 LookAndFeelPackage=org.kde.breezedark.desktop
 contrast=4
 frameContrast=0.2
+widgetStyle=Oxygen
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -160,6 +161,9 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=140
 View Style=DetailTree
+
+[Sounds]
+Theme=oxygen
 
 [WM]
 activeBackground=39,44,49
