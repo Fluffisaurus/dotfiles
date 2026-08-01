@@ -1,3 +1,7 @@
+[Libinput][1267][17479][ELAN9008:00 04F3:4447 Touchpad]
+NaturalScroll=true
+ScrollFactor=0.75
+
 [Libinput][2821][7154][Primax Electronics Ltd. ASUS Zenbook Duo Keyboard]
 NaturalScroll=false
 
@@ -5,6 +9,9 @@ NaturalScroll=false
 NaturalScroll=false
 
 [Libinput][2821][7154][Primax Electronics Ltd. ASUS Zenbook Duo Keyboard Touchpad]
+NaturalScroll=true
+
+[Libinput][2821][7155][ASUS Zenbook Duo Keyboard]
 NaturalScroll=true
 
 [Mouse]
