@@ -4,3 +4,4 @@ if [[ -z "$FISH_VERSION" && -z "$TMUX" ]]; then
     exec fish
   fi
 fi
+. "/home/fluffisaurus/.deno/env"
