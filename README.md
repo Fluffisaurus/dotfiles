@@ -40,7 +40,7 @@ Left them all as default keybindings (can customize them, [details here](https:/
 ## kde configs: portable vs per-machine
 
 
-- `kde/` (`./install kde`) — the portable stuff: `kdeglobals`, konsole, GTK theming, splash/lock screen, baloo, plasmoids, and the `/etc` power/hibernate configs. These are symlinked, so edits flow both ways automatically (`sudo` if links fail since `/etc` requires root).
+- `kde/` (`./install kde`) — the portable stuff: `kdeglobals`, konsole, GTK theming, splash/lock screen, baloo, plasmoids, and the `/etc` power/hibernate configs. These are symlinked, so edits flow both ways automatically.
 - `kde/machines/<machine>/` (`./install kde <machine>`, e.g. `./install kde zenbook-duo`) — stuff glued to this exact hardware: `kcminputrc` (this keyboard/touchpad), `kwinrc` (tiling keyed by monitor UUIDs), `plasma-org.kde.plasma.desktop-appletsrc` (panel layout tied to screen IDs). These are **copied, not symlinked** (via `scripts/kde_machine_sync.sh`), because Plasma rewrites them constantly and symlinks would dump all that churn straight into the repo.
 
 Changed a panel/tiling/input setting I actually want to keep? Pull it in on purpose:
@@ -55,7 +55,7 @@ New machine: copy `kde/machines/zenbook-duo/` as a starting point, make a matchi
 
 ### gotchas to rmbr
 
-- `./install kde` links into `/etc`, which needs root — rerun with `sudo` if those links fail.
+- `./install kde` tries to symlink into `/etc`, which fails as my user — and running the whole thing with `sudo` is WORSE (`~` becomes `/root`, so the cleans, `~/.config` links, and the machine-config `apply` all target root's home). Until the `/etc` bits get their own `sudo install` copy step, place those files by hand. Root-owned real files in `/etc` beat symlinks into /home anyway — snapper/systemd read them as root, possibly before /home is even mounted.
 - Plasma holds configs in memory and writes them back when it exits — running `apply` mid-session can get clobbered at logout. Safest order: apply, then `systemctl --user restart plasma-plasmashell` to reload the desktop, or just log out/in for kwin + input changes.
 - `export` copies the WHOLE live file — my deliberate changes and Plasma's noise together. Always read the `git diff` before committing; no blind `git add -A` on machine files.
 - The portable `kde/config` files ARE still symlinked, and KDE's atomic saves can silently swap a symlink for a real file. Check `ls -la ~/.config/kdeglobals` once in a while — if it's not a link anymore, re-run `./install kde`.
