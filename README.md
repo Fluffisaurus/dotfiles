@@ -7,9 +7,11 @@ My dotfiles and reminders to my future self of what to do and where everything i
 Clone repo and run install
 
 ```
-git clone git@github.com:Fluffisaurus/dotfiles.git
+git clone https://github.com/Fluffisaurus/dotfiles.git
 cd dotfiles/ && ./install
 ```
+
+> 💡 HTTPS on purpose: a fresh machine has no SSH keys yet, so `git@github.com:` clones just fail. Pushes auto-upgrade to SSH via the `pushInsteadOf` rule in my gitconfig once keys are set up.
 
 ## setup term dropdown
 Go to `Settings`, `Keyboard`, `Shortcuts` and add the custom script in `~/scripts/any_term_dropdown.sh` (script should be there after you run `./install`). Choose `Meta+Space` as shortcut to activate.

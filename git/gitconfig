@@ -23,3 +23,5 @@
 	colorMoved = default
 [pull]
 	rebase = true
+[url "git@github.com:Fluffisaurus/"]
+	pushInsteadOf = https://github.com/Fluffisaurus/

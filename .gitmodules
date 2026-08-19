@@ -4,4 +4,4 @@
 	ignore = dirty
 [submodule "kde/local/icons"]
 	path = kde/icons
-	url = git@github.com:Fluffisaurus/dotfiles-kde-icons.git
+	url = https://github.com/Fluffisaurus/dotfiles-kde-icons.git
