@@ -1,2 +1,8 @@
 bat-*
 aws/config
+
+# KDE/Dolphin cache files — runtime junk, never worth tracking
+*.tbcache
+
+# staging area for files removed by tooling (safe to delete manually)
+_to_delete/

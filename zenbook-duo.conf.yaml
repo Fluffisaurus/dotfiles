@@ -1,0 +1,27 @@
+# Machine-specific KDE configs for the ASUS Zenbook Duo.
+#
+# These files are hardware-bound and/or constantly rewritten by Plasma at
+# runtime, so they live in kde/machines/zenbook-duo/ instead of the portable
+# kde/config/ tree:
+#   - kcminputrc  -> keyed to this laptop's exact input devices
+#   - kwinrc      -> [Tiling] sections keyed by this machine's monitor UUIDs
+#   - plasma-org.kde.plasma.desktop-appletsrc -> panel layout tied to screen IDs
+#
+# They are COPIED into place (not symlinked), so Plasma's runtime churn stays
+# out of the repo. Apply together with the portable KDE config:
+#   ./install kde zenbook-duo
+#
+# To pull deliberate settings changes back into the repo:
+#   ~/Scripts/kde_machine_sync.sh diff     # see what changed
+#   ~/Scripts/kde_machine_sync.sh export   # copy it into the repo
+#   git diff kde/machines/zenbook-duo      # review, then commit
+#
+# A new machine gets its own folder under kde/machines/ and its own
+# <machine>.conf.yaml instead of reusing this one.
+
+- shell:
+  - command: chmod +x ./scripts/kde_machine_sync.sh
+    description: Ensure kde_machine_sync.sh is executable
+  - command: ./scripts/kde_machine_sync.sh apply zenbook-duo
+    description: Copy zenbook-duo machine configs into ~/.config
+    stdout: true

@@ -7,6 +7,10 @@ Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Ke
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
+[com.anthropic.Claude]
+F498DC0B3036DF9A3E4DAC2095B0C332-Ctrl+Alt+Space=Ctrl+Alt+Space,Ctrl+Alt+Space,Claude shortcut: Ctrl+Alt+Space
+_k_friendly_name=Claude
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
@@ -275,3 +279,7 @@ toggle do not disturb=none,none,Toggle do not disturb
 
 [services][net.local.any_term_dropdown.sh.desktop]
 _launch=Meta+Space
+
+[services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=none
+OpenWithoutScreenshot=none

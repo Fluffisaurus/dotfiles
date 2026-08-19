@@ -38,5 +38,6 @@
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "deepIndent",
     "gitlens.ai.model": "vscode",
-    "gitlens.ai.vscode.model": "copilot:gpt-4.1"
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "claudeCode.preferredLocation": "panel"
 }

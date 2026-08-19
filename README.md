@@ -37,6 +37,34 @@ Left them all as default keybindings (can customize them, [details here](https:/
 | [🖥️ Search Processes](https://github.com/PatrickF1/fzf.fish?tab=readme-ov-file#%EF%B8%8F-search-processes) | `Ctrl + Alt + P` | interactive list of all running processes | 
 |[💲 Search Variables]() | `Ctrl + V` | Interactive list showing all shell variables along with their scope, export status, details |
 
+## kde configs: portable vs per-machine
+
+
+- `kde/` (`./install kde`) — the portable stuff: `kdeglobals`, konsole, GTK theming, splash/lock screen, baloo, plasmoids, and the `/etc` power/hibernate configs. These are symlinked, so edits flow both ways automatically (`sudo` if links fail since `/etc` requires root).
+- `kde/machines/<machine>/` (`./install kde <machine>`, e.g. `./install kde zenbook-duo`) — stuff glued to this exact hardware: `kcminputrc` (this keyboard/touchpad), `kwinrc` (tiling keyed by monitor UUIDs), `plasma-org.kde.plasma.desktop-appletsrc` (panel layout tied to screen IDs). These are **copied, not symlinked** (via `scripts/kde_machine_sync.sh`), because Plasma rewrites them constantly and symlinks would dump all that churn straight into the repo.
+
+Changed a panel/tiling/input setting I actually want to keep? Pull it in on purpose:
+
+```
+~/Scripts/kde_machine_sync.sh diff     # see what changed vs the repo
+~/Scripts/kde_machine_sync.sh export   # copy it into the repo
+git diff kde/machines/zenbook-duo      # review, then commit
+```
+
+New machine: copy `kde/machines/zenbook-duo/` as a starting point, make a matching `<machine>.conf.yaml` at the repo root, run `./install kde <machine>`, let Plasma settle, then `kde_machine_sync.sh export <machine>` and commit.
+
+### gotchas to rmbr
+
+- `./install kde` links into `/etc`, which needs root — rerun with `sudo` if those links fail.
+- Plasma holds configs in memory and writes them back when it exits — running `apply` mid-session can get clobbered at logout. Safest order: apply, then `systemctl --user restart plasma-plasmashell` to reload the desktop, or just log out/in for kwin + input changes.
+- `export` copies the WHOLE live file — my deliberate changes and Plasma's noise together. Always read the `git diff` before committing; no blind `git add -A` on machine files.
+- The portable `kde/config` files ARE still symlinked, and KDE's atomic saves can silently swap a symlink for a real file. Check `ls -la ~/.config/kdeglobals` once in a while — if it's not a link anymore, re-run `./install kde`.
+- The wallpaper in `appletsrc` is just a fallback (`/usr/share/wallpapers/Next`) — superpaper autostarts and takes over at login. If an export brings in `~/.cache/superpaper/...` paths, don't keep them.
+- `*.tbcache` (Dolphin cache) is gitignored on purpose. If other cache-looking files sneak into `kde/local`, ignore those too instead of committing them.
+- The machine files moved out of `kde/config/` in Aug 2026 — use `git log --follow` when digging through their older history.
+
+> 💡 Reminder: `konsave` was considered and rejected — it just zips these same files into opaque snapshots with no git history. The split above + sync script does the same job with diffs.
+
 ## dotbot
 
 This repo utilizes [dotbot](https://github.com/anishathalye/dotbot). I chose this since it's lightweight and minimal. It does everything I need atm. More details on how to setup `install.conf.yaml` here in [Configuration](https://github.com/anishathalye/dotbot?tab=readme-ov-file#configuration) and [Directives](https://github.com/anishathalye/dotbot?tab=readme-ov-file#directives) sections.
